@@ -62,6 +62,7 @@ class Files:
                 tracker_name=self.tracker_name,
                 torrent_pack=torrent_pack,
                 torrent_path=self.torrent_path,
+                torrent_comment="Test",
                 display_name=self.display_name,
                 doc_description=self.doc_description
             )
