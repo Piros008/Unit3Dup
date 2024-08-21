@@ -15,6 +15,7 @@ class Contents:
             tracker_name: str,
             torrent_pack: bool,
             torrent_path: str,
+            torrent_comment: str,
             display_name: str,
             doc_description: str,
     ):
@@ -27,6 +28,7 @@ class Contents:
         self.tracker_name = tracker_name
         self.torrent_pack = torrent_pack
         self.torrent_path = torrent_path
+        self.torrent_comment = torrent_comment
         self.display_name = display_name
         self.doc_description = doc_description
 
@@ -42,6 +44,7 @@ class Contents:
             tracker_name: str,
             torrent_pack: bool,
             torrent_path: str,
+            torrent_comment: str,
             display_name: str,
             doc_description: str,
     ):
@@ -55,6 +58,7 @@ class Contents:
             tracker_name,
             torrent_pack,
             torrent_path,
+            torrent_comment,
             display_name,
             doc_description,
         )
