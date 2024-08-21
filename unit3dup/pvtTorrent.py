@@ -29,7 +29,7 @@ class Mytorrent:
         self.metainfo = json.loads(meta)
 
         self.mytorr = torf.Torrent(path=contents.torrent_path)
-        self.mytorr.comment = "ciao"
+        self.mytorr.comment = contents.torrent_comment
         self.mytorr.name = contents.name
         self.mytorr.created_by = "Unit3d-Up"
         self.mytorr.private = True
