@@ -4,6 +4,7 @@ import time
 import typing
 import requests
 
+from unit3dup.command import CommandLine
 from rich.console import Console
 from qbittorrent import Client
 from unit3dup.pvtTorrent import Mytorrent
@@ -16,13 +17,14 @@ console = Console(log_path=False)
 class Qbitt:
 
     def __init__(
-        self, tracker_data_response: str, torrent: Mytorrent, contents: Contents
+            self, tracker_data_response: str, torrent: Mytorrent, contents: Contents
     ):
         self.torrent = torrent
         self.torrent_path = contents.torrent_path
         self.torrent_file = None
         self.torrents = None
         self.torrent_archive = config.TORRENT_ARCHIVE
+        self.cli = CommandLine()
 
         self.qb = Client(f"{config.QBIT_URL}:{config.QBIT_PORT}/")
         download_torrent_dal_tracker = requests.get(tracker_data_response)
@@ -31,7 +33,9 @@ class Qbitt:
             self.torrent_file = self.download(download_torrent_dal_tracker)
             self.qb.login(username=config.QBIT_USER, password=config.QBIT_PASS)
             self.qb.download_from_file(
-                file_buffer=self.torrent_file, savepath=self.torrent.mytorr.location
+                file_buffer=self.torrent_file,
+                savepath=self.cli.args.force if self.cli.args.force else self.torrent.mytorr.location
+
             )
             time.sleep(3)
             # Ottieni la lista dei torrent
@@ -68,6 +72,10 @@ class Qbitt:
                 console.log(
                     f"[FILES LOCATION]..............  {self.torrent.mytorr.location}"
                 )
+                console.log(
+                    f"[FORCED LOCATION]..............  {self.cli.args.force}"
+                )
+
                 console.log(
                     f"[TORRENT NAME]................  {self.torrent.mytorr.name}.torrent"
                 )
