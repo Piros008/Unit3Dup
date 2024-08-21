@@ -93,6 +93,9 @@ PATH environment user variable
 2. Install the required dependencies using PIP.
 3. Set up the configuration .env file(s) service and itt ( rename .back in .env)
 
+### Update Bot 
+python3 autoupdate.py
+
 ___
 ### Configuration
 
