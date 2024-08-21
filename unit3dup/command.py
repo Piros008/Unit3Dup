@@ -23,6 +23,10 @@ class CommandLine:
 
         # Upload commands
         parser.add_argument("-u", "--upload", type=str, help="Upload Path")
+
+        # Force commands
+        parser.add_argument("-force", "--force", type=str, help="Force Upload Path")
+
         parser.add_argument(
             "-t", "--tracker", type=str, default="itt", help="Tracker Name"
         )
@@ -85,6 +89,10 @@ class CommandLine:
 
         if self.args.upload and not os.path.exists(self.args.upload):
             console.log(f"The path {self.args.upload} does not exist.")
+            sys.exit()
+
+        if self.args.force and not os.path.exists(self.args.force):
+            console.log(f"The path {self.args.force} does not exist.")
             sys.exit()
 
         if not os.path.exists(f"{self.args.tracker}.env"):
