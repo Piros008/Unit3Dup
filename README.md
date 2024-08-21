@@ -25,9 +25,7 @@ You can help improve this project or just hang out with us on
 Thank you
 
 ___
-### Example Usage
-
-#### Upload single episode or movie '-u' command
+### Upload single episode or movie '-u' command
 This command allows you to create and upload torrent for movies and series
 and automatically upload and seed them.
 
@@ -40,7 +38,7 @@ myvideos/
 ├── movie1.mkv
 ├── S04E12.mkv
 ```
-#### Upload multi-files and then multi-torrents
+### Upload multi-files and then multi-torrents
 This command allows you to scan for movies and series and automatically upload and seed them.
 
 python3 start.py -scan "/home/uploader/myvideos
@@ -52,7 +50,7 @@ myvideos/
 ├── movie2.mkv
 ├── S05E02.mkv
 ```
-##### Upload subfolders Movie or Serie
+### Upload subfolders Movie or Serie
 - `python3 start.py -scan "/home/uploader/myvideos
 ```
 myvideos/
@@ -65,7 +63,7 @@ myvideos/
 │   └── S01E02.mkv 
 ```
 
-##### Upload subfolders and files Movie or Serie
+### Upload subfolders and files Movie or Serie
 ```
 download/
 ├── movie1.mkv          
