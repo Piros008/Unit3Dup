@@ -25,6 +25,9 @@ You can help improve this project or just hang out with us on
 Thank you
 
 ___
+## Use 'py' for windows , 'python3' for linux os
+___
+
 ### Upload single episode or movie '-u' command
 This command allows you to create and upload torrent for movies and series
 and automatically upload and seed them.
